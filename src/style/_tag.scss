@@ -1,0 +1,50 @@
+@import "colors";
+
+$tag-height: 16px;
+$tag-hole-radius: 2px;
+$tag-corner-radius: 2px;
+$tag-left-padding: 7px;
+ul.article-tags {
+  margin: 5px 5px 0px 0px;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    font-size: 0.7em;
+
+    background: $dark-gray-color;
+    height: $tag-height;
+    line-height: $tag-height;
+    margin: 0 10px 5px 0px;
+    padding: 0 $tag-left-padding 0 ($tag-left-padding - $tag-hole-radius);
+    position: relative;
+    border-radius: $tag-corner-radius 0px 0px $tag-corner-radius;
+
+    a {
+      color: #fff;
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    &:before {
+      border: $tag-height/2 solid transparent;
+      border-left: $tag-height/2 solid $dark-gray-color;
+      content: '';
+      display: block;
+      position: absolute;
+      right: -$tag-height;
+    }
+    &:after {
+      background: #fff;
+      content: '';
+      display: block;
+      position: absolute;
+      top: $tag-height/2 - $tag-hole-radius;
+      right: 0px;
+      width: $tag-hole-radius*2;
+      height: $tag-hole-radius*2;
+      border-radius: 100%;
+    }
+  }
+}

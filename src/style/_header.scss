@@ -1,0 +1,25 @@
+@import "colors";
+
+header {
+  margin-bottom: 10px;
+
+  * {
+    display: inline;
+    vertical-align: middle;
+  }
+  h1 {
+    color: orange;
+  }
+  input {
+    margin-left: 10px;
+  }
+}
+
+input[type="search"] {
+  height: 38px;
+  padding: 6px 10px;
+  background-color: #FFF;
+  border: 1px solid $gray-color;
+  border-radius: 4px;
+  box-shadow: none;
+}

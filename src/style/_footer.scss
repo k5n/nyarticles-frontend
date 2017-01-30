@@ -1,0 +1,14 @@
+@import "colors";
+@import "font-size";
+
+footer {
+  margin-top: 10px;
+  font-size: $small-font-size;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.poweredby {
+    color: $dark-gray-color;
+    margin-left: auto;
+}
