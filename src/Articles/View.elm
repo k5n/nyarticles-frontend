@@ -14,22 +14,22 @@ view articles =
 oneArticle : Article -> Html Msg
 oneArticle one =
   article []
-    [ articleMeta one.meta
+    [ articleMeta one
     , articleTitle one.title
     , articleTags one.tags
     ]
 
-articleMeta : ArticleMeta -> Html Msg
-articleMeta meta =
+articleMeta : Article -> Html Msg
+articleMeta article =
   let
     updated =
-      if String.length meta.updated == 0 then
+      if String.length article.updated == 0 then
         ""
       else
-        "(" ++ meta.updated ++ " updated)"
+        "(" ++ article.updated ++ " updated)"
   in
     div [ class "article-meta" ]
-      [ span [ class "article-posted" ] [ text (meta.posted ++ " posted ") ]
+      [ span [ class "article-posted" ] [ text (article.posted ++ " posted ") ]
       , span [ class "article-updated" ] [ text updated ]
       ]
 

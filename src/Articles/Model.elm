@@ -1,15 +1,11 @@
 module Articles.Model exposing (..)
 
 type alias Article =
-  { id: String
-  , meta: ArticleMeta
+  { url: String
+  , posted: String
+  , updated: String
   , title: String
   , tags: List Tag
-  }
-
-type alias ArticleMeta =
-  { posted: String
-  , updated: String
   }
 
 type alias Tag =

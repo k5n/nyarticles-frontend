@@ -1,5 +1,8 @@
 module Articles.Message exposing (..)
 
+import Http
+import Articles.Model exposing (Article)
+
 type Msg
-  = LoadPage Int
+  = LoadPage (Result Http.Error (List Article))
 

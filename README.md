@@ -13,6 +13,16 @@ $ npm run build
 
 Now you have got 'dist' directory.
 
+## Start
+
+Start a stub server which provides a dummy article list.
+
+```
+$ node backend_stub.js
+```
+
+Show the created web site on your browser.
+
 ```
 $ firefox dist/index.html
 ```

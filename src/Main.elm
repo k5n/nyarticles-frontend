@@ -5,10 +5,11 @@ import View exposing (view)
 import Model exposing (Model, initialModel)
 import Message exposing (Msg(..))
 import Update exposing (update)
+import Articles.Command exposing (fetchArticleList)
 
-init : ( Model, Cmd Msg )
+init : (Model, Cmd Msg)
 init =
-  ( initialModel, Cmd.none )
+  (initialModel, Cmd.map ArticlesMsg fetchArticleList)
 
 subscriptions : Model -> Sub Msg
 subscriptions model =

@@ -8,6 +8,10 @@ type alias Model =
 
 initialModel : Model
 initialModel =
+  { articles = []
+  }
+
+{-
   { articles =
     [ { id = "00000001"
       , meta = { posted = "2017-01-10", updated = "2017-01-17" }
@@ -19,3 +23,4 @@ initialModel =
       }
     ]
   }
+-}
