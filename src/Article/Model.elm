@@ -1,4 +1,4 @@
-module Articles.Model exposing (..)
+module Article.Model exposing (..)
 
 type alias Article =
   { url: String

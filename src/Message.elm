@@ -1,7 +1,7 @@
 module Message exposing (Msg(..))
 
-import Articles.Message
+import Article.Message
 
 type Msg
-  = ArticlesMsg Articles.Message.Msg
+  = ArticlesMsg Article.Message.Msg
 

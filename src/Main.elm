@@ -5,7 +5,7 @@ import View exposing (view)
 import Model exposing (Model, initialModel)
 import Message exposing (Msg(..))
 import Update exposing (update)
-import Articles.Command exposing (fetchArticleList)
+import Article.Command exposing (fetchArticleList)
 
 init : (Model, Cmd Msg)
 init =

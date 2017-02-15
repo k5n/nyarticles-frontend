@@ -1,6 +1,6 @@
 module Model exposing(..)
 
-import Articles.Model exposing (..)
+import Article.Model exposing (..)
 
 type alias Model =
   { articles: List Article

@@ -1,7 +1,7 @@
-module Articles.Update exposing (..)
+module Article.Update exposing (..)
 
-import Articles.Message exposing (Msg(..))
-import Articles.Model exposing (Article)
+import Article.Message exposing (Msg(..))
+import Article.Model exposing (Article)
 
 update : Msg -> List Article -> (List Article, Cmd Msg)
 update message articles =

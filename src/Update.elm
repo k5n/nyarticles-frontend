@@ -2,7 +2,7 @@ module Update exposing (update)
 
 import Model exposing (Model)
 import Message exposing(Msg(..))
-import Articles.Update
+import Article.Update
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
@@ -10,7 +10,7 @@ update msg model =
     ArticlesMsg subMsg ->
       let
         (newArticles, cmd) =
-          Articles.Update.update subMsg model.articles
+          Article.Update.update subMsg model.articles
       in
         ( { model | articles = newArticles }, Cmd.map ArticlesMsg cmd)
 

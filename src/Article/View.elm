@@ -1,9 +1,9 @@
-module Articles.View exposing (..)
+module Article.View exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Articles.Model exposing (..)
-import Articles.Message exposing(Msg(..))
+import Article.Model exposing (..)
+import Article.Message exposing(Msg(..))
 
 view : List Article -> Html Msg
 view articles =

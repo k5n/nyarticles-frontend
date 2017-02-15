@@ -1,9 +1,9 @@
-module Articles.Command exposing (..)
+module Article.Command exposing (..)
 
 import Http
 import Json.Decode as Decode exposing (field)
-import Articles.Model exposing (Article, Tag)
-import Articles.Message exposing (Msg(..))
+import Article.Model exposing (Article, Tag)
+import Article.Message exposing (Msg(..))
 
 fetchArticleList : Cmd Msg
 fetchArticleList =
