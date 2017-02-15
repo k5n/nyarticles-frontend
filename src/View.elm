@@ -4,7 +4,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Model exposing (Model)
 import Message exposing(Msg(..))
-import Article.View
+import Article.List
 
 view : Model -> Html Msg
 view model =
@@ -14,7 +14,7 @@ view model =
       , input [ type_ "search", placeholder "Search" ] []
       ]
     , hr [] []
-    , main_ [] [ Article.View.view model.articles |> Html.map ArticlesMsg ]
+    , main_ [] [ Article.List.view model.articles |> Html.map ArticlesMsg ]
     , hr [] []
     , footer []
       [ span [ class "copyright" ] [ text "© 2017 k5n" ]

@@ -1,4 +1,4 @@
-module Article.View exposing (..)
+module Article.List exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
