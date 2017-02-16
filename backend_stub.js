@@ -7,7 +7,7 @@ var server = http.createServer(function(req, res) {
         var statusCode = 200;
         switch (req.url) {
             case '/page/0':
-                var json = '[{ "url": "https://gist.github.com/k5n/068a262b70630d7fb1fcf12e63c0fd51", "posted": "2017-01-29", "updated": "2017-01-29", "title": "Qiitaを脱出するぞ！", "tags": [ {"id": "nyarticles", "name": "Nyarticles"} ] }, { "url": "https://gist.github.com/k5n/4dd52d7e44ff30928f5143b2436a83e1", "posted": "2017-01-30", "updated": "2017-01-30", "title": "Nyarticles作成計画", "tags": [ {"id": "nyarticles", "name": "Nyarticles"} ] } ]';
+                var json = '[{ "id": "068a262b70630d7fb1fcf12e63c0fd51", "posted": "2017-01-29", "updated": "2017-01-29", "title": "Qiitaを脱出するぞ！", "tags": [ {"id": "nyarticles", "name": "Nyarticles"} ] }, { "id": "4dd52d7e44ff30928f5143b2436a83e1", "posted": "2017-01-30", "updated": "2017-01-30", "title": "Nyarticles作成計画", "tags": [ {"id": "nyarticles", "name": "Nyarticles"} ] } ]';
                 console.log("JSON: " + json);
                 break;
             default:

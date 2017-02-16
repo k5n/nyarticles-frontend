@@ -5,6 +5,10 @@ import Json.Decode as Decode exposing (field)
 import Article.Model exposing (Article, Tag)
 import Article.Message exposing (Msg(..))
 
+{--
+ Article List
+--}
+
 fetchArticleList : Cmd Msg
 fetchArticleList =
   Http.get fetchArticleListUrl collectionDecoder
@@ -21,7 +25,7 @@ collectionDecoder =
 articleDecoder : Decode.Decoder Article
 articleDecoder =
   Decode.map5 Article
-    (field "url" Decode.string)
+    (field "id" Decode.string)
     (field "posted" Decode.string)
     (field "updated" Decode.string)
     (field "title" Decode.string)

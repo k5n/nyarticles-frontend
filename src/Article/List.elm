@@ -15,7 +15,7 @@ oneArticle : Article -> Html Msg
 oneArticle one =
   article []
     [ articleMeta one
-    , articleTitle one.title
+    , articleTitle one
     , articleTags one.tags
     ]
 
@@ -33,9 +33,11 @@ articleMeta article =
       , span [ class "article-updated" ] [ text updated ]
       ]
 
-articleTitle : String -> Html Msg
-articleTitle title =
-  span [ class "article-title" ] [ text title ]
+articleTitle : Article -> Html Msg
+articleTitle article =
+  span [ class "article-title" ]
+    [ a [ href ("https://gist.github.com/" ++ article.id)] [text article.title]
+    ]
 
 articleTags : List Tag -> Html Msg
 articleTags tags =
