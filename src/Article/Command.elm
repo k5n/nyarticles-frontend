@@ -9,14 +9,17 @@ import Article.Message exposing (Msg(..))
  Article List
 --}
 
-fetchArticleList : Cmd Msg
-fetchArticleList =
-  Http.get fetchArticleListUrl collectionDecoder
-    |> Http.send LoadPage
+fetchPage : Int -> Cmd Msg
+fetchPage pageNum =
+  pageUrl pageNum |> fetchArticleList
 
-fetchArticleListUrl : String
-fetchArticleListUrl =
-  "http://localhost:8080/page/0"
+fetchArticleList : String -> Cmd Msg
+fetchArticleList url =
+  Http.get url collectionDecoder |> Http.send LoadPage
+
+pageUrl : Int -> String
+pageUrl pageNum =
+  "http://localhost:8080/page/" ++ (toString pageNum)
 
 collectionDecoder : Decode.Decoder (List Article)
 collectionDecoder =

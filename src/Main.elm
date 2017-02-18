@@ -7,12 +7,13 @@ import Model exposing (Model, initialModel)
 import Message exposing (Msg(..))
 import Update exposing (update)
 import Routing exposing (parseLocation)
+import Command exposing (commandFromRoute)
 import Article.Command exposing (fetchArticleList)
 
 init : Location -> (Model, Cmd Msg)
 init location =
   ( initialModel (Routing.parseLocation location)
-  , Cmd.map ArticlesMsg fetchArticleList
+  , parseLocation location |> commandFromRoute
   )
 
 subscriptions : Model -> Sub Msg
