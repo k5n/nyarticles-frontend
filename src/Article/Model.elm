@@ -1,7 +1,10 @@
 module Article.Model exposing (..)
 
+type alias ArticleId =
+  String
+
 type alias Article =
-  { id: String
+  { id: ArticleId
   , posted: String
   , updated: String
   , title: String

@@ -1,15 +1,19 @@
 module Main exposing (..)
 
+import Navigation exposing (Location)
 import Html exposing (program)
 import View exposing (view)
 import Model exposing (Model, initialModel)
 import Message exposing (Msg(..))
 import Update exposing (update)
+import Routing exposing (parseLocation)
 import Article.Command exposing (fetchArticleList)
 
-init : (Model, Cmd Msg)
-init =
-  (initialModel, Cmd.map ArticlesMsg fetchArticleList)
+init : Location -> (Model, Cmd Msg)
+init location =
+  ( initialModel (Routing.parseLocation location)
+  , Cmd.map ArticlesMsg fetchArticleList
+  )
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
@@ -17,9 +21,10 @@ subscriptions model =
 
 main : Program Never Model Msg
 main =
-  program
+  Navigation.program OnLocationChange
     { init = init
     , view = view
     , update = update
     , subscriptions = subscriptions
     }
+
