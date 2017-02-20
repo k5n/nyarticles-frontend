@@ -10,5 +10,11 @@ update message articles =
       (newArticles, Cmd.none)
 
     LoadPage (Err error) ->
-      (articles, Cmd.none)
+      ([], Cmd.none)
+
+    LoadArticle (Ok newArticle) ->
+      ([ newArticle ], Cmd.none)
+
+    LoadArticle (Err error) ->
+      ([], Cmd.none)
 

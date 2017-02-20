@@ -7,8 +7,8 @@ type alias Article =
   { id: ArticleId
   , posted: String
   , updated: String
-  , title: String
   , tags: List Tag
+  , content: String {- If this is one of an aritlce list, this includes only it's title. -}
   }
 
 type alias Tag =

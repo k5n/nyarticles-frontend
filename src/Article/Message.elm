@@ -5,4 +5,5 @@ import Article.Model exposing (Article)
 
 type Msg
   = LoadPage (Result Http.Error (List Article))
+  | LoadArticle (Result Http.Error Article)
 

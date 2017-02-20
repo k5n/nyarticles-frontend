@@ -9,12 +9,12 @@ import Article.Update
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
   case Debug.log "update" msg of
-    ArticlesMsg subMsg ->
+    ArticleMsg subMsg ->
       let
         (newArticles, cmd) =
           Article.Update.update subMsg model.articles
       in
-        ( { model | articles = newArticles }, Cmd.map ArticlesMsg cmd)
+        ( { model | articles = newArticles }, Cmd.map ArticleMsg cmd)
 
     OnLocationChange location ->
       let

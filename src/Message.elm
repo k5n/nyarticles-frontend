@@ -4,6 +4,6 @@ import Navigation exposing (Location)
 import Article.Message
 
 type Msg
-  = ArticlesMsg Article.Message.Msg
+  = ArticleMsg Article.Message.Msg
   | OnLocationChange Location
 
