@@ -1,6 +1,7 @@
 module Article.Command exposing (..)
 
 import Http
+import Date exposing (Date)
 import Json.Decode as Decode exposing (..)
 import Article.Model exposing (Article, Tag, ArticleId)
 import Article.Message exposing (Msg(..))
@@ -29,8 +30,8 @@ articleDecoder : Decoder Article
 articleDecoder =
   map5 Article
     (field "id" string)
-    (field "posted" string)
-    (field "updated" string)
+    (field "posted" string |> andThen stringToDate)
+    (field "updated" string |> andThen stringToDate)
     (field "tags" (list tagDecoder))
     (field "title" string)
 
@@ -39,6 +40,15 @@ tagDecoder =
   map2 Tag
     (field "id" string)
     (field "name" string)
+
+stringToDate: String -> Decoder Date
+stringToDate str =
+  case (Date.fromString str) of
+    Ok date ->
+      succeed date
+
+    Err error ->
+      fail error
 
 {-
  An article
@@ -56,8 +66,8 @@ gistJsonDecoder : Decoder Article
 gistJsonDecoder =
   map5 Article
     (field "id" string)
-    (field "created_at" string)
-    (field "updated_at" string)
+    (field "created_at" string |> andThen stringToDate)
+    (field "updated_at" string |> andThen stringToDate)
     (map stringToTagList (at ["files", "meta.json", "content"] string))
     (at ["files", "article.md", "content"]  string)
 

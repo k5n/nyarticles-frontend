@@ -1,5 +1,6 @@
 module Article.View exposing (..)
 
+import Date exposing (Date, year, month, day)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Markdown
@@ -17,16 +18,19 @@ view one =
 articleMeta : Article -> Html Msg
 articleMeta article =
   let
+    posted =
+      (dateString article.posted) ++ " posted "
     updated =
-      if String.length article.updated == 0 then
-        ""
-      else
-        "(" ++ article.updated ++ " updated)"
+      "(" ++ (dateString article.updated) ++ " updated)"
   in
     div [ class "article-meta" ]
-      [ span [ class "article-posted" ] [ text (article.posted ++ " posted ") ]
+      [ span [ class "article-posted" ] [ text posted ]
       , span [ class "article-updated" ] [ text updated ]
       ]
+
+dateString : Date -> String
+dateString date =
+  (year date |> toString ) ++ " " ++ (month date |> toString) ++ " " ++ (day date |> toString)
 
 articleTitle : Article -> Html Msg
 articleTitle article =
