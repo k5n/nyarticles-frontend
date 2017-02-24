@@ -12,7 +12,7 @@ ul.article-tags {
     display: inline-block;
     font-size: 0.7em;
 
-    background: $dark-gray-color;
+    background: $dark-color;
     height: $tag-height;
     line-height: $tag-height;
     margin: 0 10px 5px 0px;
@@ -29,7 +29,7 @@ ul.article-tags {
 
     &:before {
       border: $tag-height/2 solid transparent;
-      border-left: $tag-height/2 solid $dark-gray-color;
+      border-left: $tag-height/2 solid $dark-color;
       content: '';
       display: block;
       position: absolute;

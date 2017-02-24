@@ -6,13 +6,14 @@ body {
   margin: auto;
   padding: 20px;
   color: $text-color;
+  font-size: $normal-font-size;
 }
 
 @import "header";
 @import "footer";
 
 hr {
-  color: $light-gray-color;
+  color: $light-color;
 }
 
 main, aside {
@@ -38,7 +39,7 @@ article {
   padding: 10px 0px
 }
 article:not(:last-child) {
-  border-bottom: 1px solid $light-gray-color;
+  border-bottom: 1px solid $light-color;
 }
 a {
   color: $link-color;
@@ -59,4 +60,8 @@ h2 {
 }
 
 @import "tag";
+
+.article-content {
+  @import "markdown";
+}
 
