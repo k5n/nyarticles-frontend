@@ -12,7 +12,7 @@ view : Model -> Html Msg
 view model =
   div []
     [ header []
-      [ h1 [] [ text "Nyarticles" ]
+      [ h1 [] [ a [ href "" ] [text "Nyarticles" ] ]
       , input [ type_ "search", placeholder "Search" ] []
       ]
     , hr [] []
