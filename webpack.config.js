@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -9,6 +10,14 @@ module.exports = {
     path: path.resolve(__dirname + '/dist'),
     filename: '[name].js'
   },
+
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+          warnings: false
+      }
+    })
+  ],
 
   module: {
     loaders: [
