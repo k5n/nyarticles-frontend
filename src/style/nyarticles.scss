@@ -50,9 +50,9 @@ a {
   }
 }
 
-h2 {
-  font-size: 1.2em;
-  margin: 20px 0 10px 0
+.article-list h1 {
+  font-size: $pretty-big-font-size;
+  margin: 0 0 0 0
 }
 
 .article-meta {

@@ -14,7 +14,7 @@ update msg model =
         (newArticles, cmd) =
           Article.Update.update subMsg model.articles
       in
-        ( { model | articles = newArticles }, Cmd.map ArticleMsg cmd)
+        ( { model | articles = newArticles, loading = False }, Cmd.map ArticleMsg cmd)
 
     OnLocationChange location ->
       let
@@ -23,5 +23,5 @@ update msg model =
         newCommand =
           commandFromRoute newRoute
       in
-        ( { model | route = newRoute }, newCommand )
+        ( { model | route = newRoute, loading = True }, newCommand )
 

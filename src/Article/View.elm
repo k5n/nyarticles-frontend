@@ -32,12 +32,6 @@ dateString : Date -> String
 dateString date =
   (year date |> toString ) ++ " " ++ (month date |> toString) ++ " " ++ (day date |> toString)
 
-articleTitle : Article -> Html Msg
-articleTitle article =
-  span [ class "article-title" ]
-    [ a [ href ("#" ++ article.id)] [text article.content]
-    ]
-
 articleTags : List Tag -> Html Msg
 articleTags tags =
   ul [ class "article-tags" ] (List.map articleTag tags)

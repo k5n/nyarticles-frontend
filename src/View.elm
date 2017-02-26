@@ -2,6 +2,7 @@ module View exposing(view)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Material.Spinner as Loading
 import Model exposing (Model)
 import Message exposing (Msg(..))
 import Routing exposing (Route(..))
@@ -16,6 +17,7 @@ view model =
       , input [ type_ "search", placeholder "Search" ] []
       ]
     , hr [] []
+    , spinner model.loading
     , main_ [] [ mainContent model ]
     , hr [] []
     , footer []
@@ -47,4 +49,14 @@ mainContent model =
 notFoundView : Html Msg
 notFoundView =
   div [] [ text "Not Found" ]
+
+spinner : Bool -> Html Msg
+spinner loading =
+  case loading of
+    True ->
+      Loading.spinner [ Loading.active True ]
+
+    False ->
+      div [] []
+
 
