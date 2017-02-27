@@ -58,7 +58,16 @@ a {
 .article-meta {
   font-size: $small-font-size;
   margin: 5px 0;
+
+  .article-posted {
+    margin-right: 10px;
+  }
+  i {
+    font-size: $small-font-size;
+    margin-right: 5px;
+  }
 }
+
 
 @import "tag";
 

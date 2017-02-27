@@ -19,12 +19,14 @@ articleMeta : Article -> Html Msg
 articleMeta article =
   let
     posted =
-      (dateString article.posted) ++ " posted "
+      dateString article.posted
     updated =
-      "(" ++ (dateString article.updated) ++ " updated)"
+      dateString article.updated
   in
     div [ class "article-meta" ]
-      [ span [ class "article-posted" ] [ text posted ]
+      [ i [ class "material-icons" ] [ text "publish" ]
+      , span [ class "article-posted" ] [ text posted ]
+      , i [ class "material-icons" ] [ text "update" ]
       , span [ class "article-updated" ] [ text updated ]
       ]
 

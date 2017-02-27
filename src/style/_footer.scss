@@ -3,12 +3,12 @@
 
 footer {
   margin-top: 10px;
+  color: $dark-color;
   font-size: $small-font-size;
   display: flex;
   flex-wrap: wrap;
 }
 
 .poweredby {
-    color: $dark-color;
-    margin-left: auto;
+  margin-left: auto;
 }
