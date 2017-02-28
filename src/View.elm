@@ -2,6 +2,7 @@ module View exposing(view)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import List.Extra
 import Material.Spinner as Loading
 import Model exposing (Model)
 import Message exposing (Msg(..))
@@ -34,7 +35,8 @@ mainContent model =
 
     ArticleRoute articleId ->
       let
-        maybeArticle = List.head model.articles
+        maybeArticle =
+          List.Extra.find (\article -> article.id == articleId) model.articles
       in
         case maybeArticle of
           Just article ->
@@ -58,5 +60,4 @@ spinner loading =
 
     False ->
       div [] []
-
 
