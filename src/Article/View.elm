@@ -9,11 +9,33 @@ import Article.Message exposing(Msg(..))
 
 view : Article -> Html Msg
 view one =
-  article []
-    [ articleMeta one
-    , articleTags one.tags
-    , articleContent one
-    ]
+  let
+    firstLine =
+      one.content
+        |> String.lines
+        |> List.head
+        |> Maybe.withDefault ""
+    title =
+      case String.startsWith "# " firstLine of
+        True ->
+          String.dropLeft 2 firstLine
+        False ->
+          firstLine
+    firstLineLen =
+      String.length firstLine
+    content =
+      String.dropLeft firstLineLen one.content
+  in
+    article []
+      [ articleTitle title
+      , articleMeta one
+      , articleTags one.tags
+      , articleContent content
+      ]
+
+articleTitle : String -> Html Msg
+articleTitle title =
+  h1 [ class "article-title" ] [ text title ]
 
 articleMeta : Article -> Html Msg
 articleMeta article =
@@ -42,7 +64,7 @@ articleTag : Tag -> Html Msg
 articleTag tag =
   li [] [ text tag.name ]
 
-articleContent : Article -> Html Msg
-articleContent one =
-  Markdown.toHtml [ class "article-content"] one.content
+articleContent : String -> Html Msg
+articleContent content =
+    Markdown.toHtml [ class "article-content"] content
 
