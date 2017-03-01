@@ -7,8 +7,21 @@ footer {
   font-size: $small-font-size;
   display: flex;
   flex-wrap: wrap;
+
+  .poweredby {
+    margin-left: auto;
+  }
+
+  .sns-icon {
+    margin-left: 10px;
+    font-size: $pretty-big-font-size;
+    a {
+      color: $dark-color;
+      text-decoration: none;
+      &:hover {
+        color: $dark-color;
+      }
+    }
+  }
 }
 
-.poweredby {
-  margin-left: auto;
-}
