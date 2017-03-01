@@ -18,8 +18,8 @@ view model =
       , input [ type_ "search", placeholder "Search" ] []
       ]
     , hr [] []
-    , spinner model.loading
     , main_ [] [ mainContent model ]
+    , spinner model.loading
     , hr [] []
     , footer []
       [ span [ class "copyright" ] [ text "© 2017 k5n" ]
